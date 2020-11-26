@@ -15,16 +15,16 @@
 
 
   /******************************
- * COLORS: Light Theme
- *
- * 1. Summary Information
- * 2. Test Result
- * 3. Results Table
- * 3.1. Table Layout
- * 3.2. Extra
- * 3.3. Sorting items
- *
- ******************************/
+   * COLORS: Light Theme
+   *
+   * 1. Summary Information
+   * 2. Test Result
+   * 3. Results Table
+   * 3.1. Table Layout
+   * 3.2. Extra
+   * 3.3. Sorting items
+   *
+   ******************************/
 
   body {
     background-color: $background;
@@ -42,8 +42,8 @@
   }
 
   /*------------------
- * 1. Summary Information
- *------------------*/
+   * 1. Summary Information
+   *------------------*/
 
   #environment td {
     border-color: $border;
@@ -54,8 +54,8 @@
   }
 
   /*------------------
- * 2. Test Result
- *------------------*/
+   * 2. Test Result
+   *------------------*/
 
   span {
     &.passed {
