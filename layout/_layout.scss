@@ -40,6 +40,32 @@ table {
 }
 
 /******************************
+ * TEST RESULT
+ ******************************/
+
+span {
+
+  &.passed,
+  &.error,
+  &.failed,
+  &.xpassed,
+  &.skipped,
+  &.xfailed,
+  &.rerun {
+    font-weight: bold;
+  }
+}
+
+.col-result {
+  font-weight: bold;
+
+  .expander,
+  .collapser {
+    font-weight: normal;
+  }
+}
+
+/******************************
  * RESULTS TABLE
  *
  * 1. Table Layout
@@ -130,14 +156,16 @@ div.video {
   display: none;
 }
 
-.expander::after,
-.collapser::after {
+.expander,
+.collapser {
   font-style: italic;
   cursor: pointer;
 }
+
 .expander::after {
   content: " (show details)";
 }
+
 .collapser::after {
   content: " (hide details)";
 }
@@ -160,8 +188,8 @@ div.video {
   $triangle-width: 8px;
   width: 0;
   height: 0;
-  border-left-width: $triangle-width ;
-  border-right-width: $triangle-width ;
+  border-left-width: $triangle-width;
+  border-right-width: $triangle-width;
   border-left-style: solid;
   border-right-style: solid;
 

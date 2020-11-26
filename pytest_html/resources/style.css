@@ -27,6 +27,21 @@ table {
 }
 
 /******************************
+ * TEST RESULT
+ ******************************/
+span.passed, span.error, span.failed, span.xpassed, span.skipped, span.xfailed, span.rerun {
+  font-weight: bold;
+}
+
+.col-result {
+  font-weight: bold;
+}
+.col-result .expander,
+.col-result .collapser {
+  font-weight: normal;
+}
+
+/******************************
  * RESULTS TABLE
  *
  * 1. Table Layout
@@ -103,8 +118,8 @@ div.video video {
   display: none;
 }
 
-.expander::after,
-.collapser::after {
+.expander,
+.collapser {
   font-style: italic;
   cursor: pointer;
 }
@@ -169,14 +184,8 @@ body {
   color: #999;
 }
 
-h1 {
-  color: black;
-}
-
-h2 {
-  color: black;
-}
-
+h1,
+h2,
 p {
   color: black;
 }
@@ -189,31 +198,36 @@ a {
  * 1. Summary Information
  *------------------*/
 #environment td {
-  border-color: #E6E6E6;
+  border-color: #e6e6e6;
 }
 
 #environment tr:nth-child(odd) {
-  background-color: #f6f6f6;
+  background-color: #f7f7f7;
 }
 
 /*------------------
  * 2. Test Result
  *------------------*/
-span.passed,
+span.passed {
+  color: green;
+}
+span.skipped, span.xfailed, span.rerun {
+  color: orange;
+}
+span.error, span.failed, span.xpassed {
+  color: red;
+}
+
 .passed .col-result {
   color: green;
 }
 
-span.skipped,
-span.xfailed,
-span.rerun,
 .skipped .col-result,
 .xfailed .col-result,
 .rerun .col-result {
   color: orange;
 }
 
-span.error, span.failed, span.xpassed,
 .error .col-result,
 .failed .col-result,
 .xpassed .col-result {
@@ -230,7 +244,7 @@ span.error, span.failed, span.xpassed,
 
 #results-table th,
 #results-table td {
-  border-color: #E6E6E6;
+  border-color: #e6e6e6;
 }
 
 /*------------------
@@ -250,19 +264,16 @@ div.video {
   border-color: #e6e6e6;
 }
 
-.expander::after {
-  color: #BBB;
-}
-
+.expander::after,
 .collapser::after {
-  color: #BBB;
+  color: #bbb;
 }
 
 /*------------------
  * 3.3. Sorting items
  *------------------*/
 .inactive .sort-icon {
-  border-top-color: #E6E6E6;
+  border-top-color: #e6e6e6;
 }
 
 .asc.active .sort-icon {
@@ -271,135 +282,4 @@ div.video {
 
 .desc.active .sort-icon {
   border-top-color: #999;
-}
-
-@media (prefers-color-scheme: dark) {
-  /******************************
-   * COLORS: Dark Theme
-   *
-   * 1. Summary Information
-   * 2. Test Result
-   * 3. Results Table
-   * 3.1. Table Layout
-   * 3.2. Extra
-   * 3.3. Sorting items
-   *
-   ******************************/
-  body {
-    background-color: #222;
-    color: #aaa;
-  }
-
-  h1 {
-    color: #ccc;
-  }
-
-  h2 {
-    color: #ccc;
-  }
-
-  p {
-    color: #ccc;
-  }
-
-  a {
-    color: #c6c2ab;
-  }
-
-  /*------------------
-   * Summary Information
-   *------------------*/
-  #environment td {
-    border-color: #333;
-  }
-
-  #environment tr:nth-child(odd) {
-    background-color: #292929;
-  }
-
-  /*------------------
-   * 2. Test Result
-   *
-   * texts are bold, to be seen easily.
-   *------------------*/
-  span.passed,
-.passed .col-result {
-    color: #4E9A06;
-    font-weight: bold;
-  }
-
-  span.skipped,
-span.xfailed,
-span.rerun,
-.skipped .col-result,
-.xfailed .col-result,
-.rerun .col-result {
-    color: #C4A000;
-    font-weight: bold;
-  }
-
-  span.error,
-span.failed,
-span.xpassed,
-.error .col-result,
-.failed .col-result,
-.xpassed .col-result {
-    color: #CC0000;
-    font-weight: bold;
-  }
-
-  /*------------------
-   * 3.1. Table Layout
-   *------------------*/
-  #results-table {
-    border-color: #333;
-    color: #aaa;
-  }
-
-  #results-table th,
-#results-table td {
-    border-color: #333;
-  }
-
-  /*------------------
-   * 3.2. Extra
-   *------------------*/
-  .log {
-    background-color: #0c0c0d;
-    border-color: #333;
-    color: #8c8c8c;
-  }
-
-  div.image {
-    border-color: #333;
-  }
-
-  div.video {
-    border-color: #333;
-  }
-
-  .expander::after {
-    color: #c6c2ab;
-    font-weight: normal;
-  }
-
-  .collapser::after {
-    color: #c6c2ab;
-    font-weight: normal;
-  }
-
-  /*------------------
-   * 3.3. Sorting items
-   *------------------*/
-  .inactive .sort-icon {
-    border-top-color: #333;
-  }
-
-  .asc.active .sort-icon {
-    border-bottom-color: #aaa;
-  }
-
-  .desc.active .sort-icon {
-    border-top-color: #aaa;
-  }
 }

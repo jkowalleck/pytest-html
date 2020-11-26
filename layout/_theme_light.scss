@@ -1,3 +1,23 @@
+$text: black;
+$link: #999;
+$text-arbitrary: #999;
+
+$background: white;
+$background-alt: darken($background, 3%);
+
+$border: darken($background, 10%);
+
+$expander: #bbb;
+
+$result-ok: green;
+$result-warn: orange;
+$result-error: red;
+
+$log-bg: darken($background, 10%);
+$log-fg: $text;
+
+
+
 /******************************
  * COLORS: Light Theme
  *
@@ -11,24 +31,18 @@
  ******************************/
 
 body {
-  background-color: white;
-  color: #999;
+  background-color: $background;
+  color: $text-arbitrary;
 }
 
-h1 {
-  color: black;
-}
-
-h2 {
-  color: black;
-}
-
+h1,
+h2,
 p {
-  color: black;
+  color: $text;
 }
 
 a {
-  color: #999;
+  color: $link;
 }
 
 /*------------------
@@ -36,36 +50,55 @@ a {
  *------------------*/
 
 #environment td {
-  border-color: #E6E6E6;
+  border-color: $border;
 }
 
 #environment tr:nth-child(odd) {
-  background-color: #f6f6f6;
+  background-color: $background-alt;
 }
 
 /*------------------
  * 2. Test Result
  *------------------*/
 
-span.passed,
-.passed .col-result {
-  color: green;
+span {
+  &.passed {
+    color: $result-ok;
+  }
+
+  &.skipped,
+  &.xfailed,
+  &.rerun {
+    color: $result-warn;
+  }
+
+  &.error,
+  &.failed,
+  &.xpassed {
+    color: $result-error;
+  }
 }
 
-span.skipped,
-span.xfailed,
-span.rerun,
-.skipped .col-result,
-.xfailed .col-result,
-.rerun .col-result {
-  color: orange;
+.passed {
+  .col-result {
+    color: $result-ok;
+  }
 }
 
-span.error, span.failed, span.xpassed,
-.error .col-result,
-.failed .col-result,
-.xpassed .col-result {
-  color: red;
+.skipped,
+.xfailed,
+.rerun {
+  .col-result {
+    color: $result-warn;
+  }
+}
+
+.error,
+.failed,
+.xpassed {
+  .col-result {
+    color: $result-error;
+  }
 }
 
 
@@ -74,13 +107,13 @@ span.error, span.failed, span.xpassed,
  *------------------*/
 
 #results-table {
-  border-color: #e6e6e6;
-  color: #999;
+  border-color: $border;
+  color: $text-arbitrary;
 }
 
 #results-table th,
 #results-table td {
-  border-color: #E6E6E6;
+  border-color: $border;
 }
 
 /*------------------
@@ -88,25 +121,22 @@ span.error, span.failed, span.xpassed,
  *------------------*/
 
 .log {
-  background-color: #e6e6e6;
-  border-color: #e6e6e6;
-  color: black;
+  background-color: $log-bg;
+  border-color: $log-bg;
+  color: $log-fg;
 }
 
 div.image {
-  border-color: #e6e6e6;
+  border-color: $border;
 }
 
 div.video {
-  border-color: #e6e6e6;
+  border-color: $border;
 }
 
-.expander::after {
-  color: #BBB;
-}
-
+.expander::after,
 .collapser::after {
-  color: #BBB;
+  color: $expander;
 }
 
 /*------------------
@@ -114,13 +144,13 @@ div.video {
  *------------------*/
 
 .inactive .sort-icon {
-  border-top-color: #E6E6E6;
+  border-top-color: $border;
 }
 
 .asc.active .sort-icon {
-  border-bottom-color: #999;
+  border-bottom-color: $text-arbitrary;
 }
 
 .desc.active .sort-icon {
-  border-top-color: #999;
+  border-top-color: $text-arbitrary;
 }
