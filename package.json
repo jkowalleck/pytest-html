@@ -9,6 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "sass layout/style.scss pytest_html/resources/style.css --no-source-map -s compressed"
   }
 }
