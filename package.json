@@ -11,6 +11,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "build-css": "sass --no-source-map --no-error-css -s compressed layout/style.scss pytest_html/resources/style.css"
+    "build-css": "sass --no-source-map --no-error-css -s compressed src/layout/css/style.scss src/pytest_html/resources/style.css"
   }
 }

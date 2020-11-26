@@ -1,4 +1,5 @@
-@mixin apply($text,
+@mixin apply(
+  $text,
   $link,
   $text-arbitrary,
   $background,
@@ -98,8 +99,8 @@
 
 
   /*------------------
- * 3.1. Table Layout
- *------------------*/
+   * 3.1. Table Layout
+   *------------------*/
 
   #results-table {
     border-color: $border;
@@ -112,8 +113,8 @@
   }
 
   /*------------------
- * 3.2. Extra
- *------------------*/
+   * 3.2. Extra
+   *------------------*/
 
   .log {
     background-color: $log-bg;
@@ -135,8 +136,8 @@
   }
 
   /*------------------
- * 3.3. Sorting items
- *------------------*/
+   * 3.3. Sorting items
+   *------------------*/
 
   .inactive .sort-icon {
     border-top-color: $border;
